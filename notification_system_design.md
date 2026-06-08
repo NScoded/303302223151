@@ -110,3 +110,28 @@ Worker:
 
     retry_if_failed()
 ```
+# Stage 6
+
+## Priority Calculation
+
+| Notification Type | Priority |
+| ----------------- | -------- |
+| Placement         | 3        |
+| Result            | 2        |
+| Event             | 1        |
+
+## Sorting Strategy
+
+1. Higher priority notifications first.
+2. If priorities are equal, latest timestamp first.
+3. Return top 10 notifications.
+
+## Time Complexity
+
+Sorting N notifications:
+
+O(N log N)
+
+## Future Optimization
+
+Use a Priority Queue (Heap) to maintain Top 10 notifications efficiently.
